@@ -95,12 +95,9 @@ urlpatterns = [
     url(r'^logapi/', include('search_api.urls'))
 ]
 ```
-4. In the `search_api/essearch.py`, set the host and the port on which elasticsearch is running
+4. In the `search_api/settings.py`, add the elasticsearch hosts in SERVER_CONF 
 ```python
-class SearchElasticSearch:
-    def __init__(self):
-        ...
-        self.es = Elasticsearch([{'host': '172.18.0.2', 'port': 9200}])
-        ...
+   ...,
+   SERVER_CONF = [ "elasticsearch" ]
 ```
 6. Use the URLs to get the required data
