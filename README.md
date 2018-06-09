@@ -80,22 +80,24 @@ Debugging module is defined in utils.py and enables 5 levels of logging along wi
 
 ## Installing Search API
 
-1. Copy the `search_api` folder into the root of the main Django project.
-2. In the main project's `settings.py` file, add the `'search_api'` in the Installed Apps list -
+1. Install the python client for Elasticsearch using the following pip command:
+	``` pip install elasticsearch ```
+2. Copy the `search_api` folder into the root of the main Django project.
+3. In the main project's `settings.py` file, add the `'search_api'` in the Installed Apps list -
 ```python
 INSTALLED_APPS = [
     ...,
     'search_api'
 ]
 ```
-3. Also add the following line in the main project's `urls.py` file:
+4. Also add the following line in the main project's `urls.py` file:
 ```python
 urlpatterns = [
     ...,
     url(r'^logapi/', include('search_api.urls'))
 ]
 ```
-4. In the `search_api/settings.py`, add the elasticsearch hosts in SERVER_CONF 
+5. In the `search_api/settings.py`, add the elasticsearch hosts in SERVER_CONF 
 ```python
    ...,
    SERVER_CONF = [ "elasticsearch" ]
