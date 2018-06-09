@@ -97,9 +97,14 @@ urlpatterns = [
     url(r'^logapi/', include('search_api.urls'))
 ]
 ```
-5. In the `search_api/settings.py`, add the elasticsearch hosts in SERVER_CONF 
+5. To install the elasticsearchclient add the following in the requirements.text of Collaboration-System Repository
+```
+    ...,
+    elasticsearch
+```
+6. In the `search_api/settings.py`, add the elasticsearch hosts in SERVER_CONF 
 ```python
    ...,
    SERVER_CONF = [ "elasticsearch" ]
 ```
-6. Use the URLs to get the required data
+7. Use the URLs to get the required data
