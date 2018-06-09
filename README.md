@@ -2,19 +2,19 @@
 
 <p>
 Event logging module is a part of the Collaboration system. This module deals with the logging of the user interaction events, such as view an article.
-This module works as a middleware in Django project and captures and filters the request based on the specification.
+This module works as a middleware in Django project and captures and filters the request based on the specification. The logs will be stored in elasticsearch using logstash.
 </p>
 
 ## Setup
 
-<p>To setup this module with the Collaboration system, perform the follwing steps:</p>
-1. copy the 'eventlog' folder into the root of the main Django project.
-2. go to project's `settings.py` and in the set of the middlewares add following line:
+<p>To setup this module with the Collaboration system, perform the following steps:</p>
+1. Copy the `eventlog` folder into the root of the main Django project.
+2. Go to project's `settings.py` file and in the set of the middlewares add following line:
 
 ```python
 MIDDLE_WARE = [
-...
-'evenlog.middleware.Middleware'
+    ...,
+    'evenlog.middleware.Middleware'
 ]
 ```
 
@@ -78,5 +78,29 @@ Debugging module is defined in utils.py and enables 5 levels of logging along wi
 2. Set `DEBUG = True`
 
 
+## Installing Search API
 
-
+1. Copy the `search_api` folder into the root of the main Django project.
+2. In the main project's `settings.py` file, add the `'search_api'` in the Installed Apps list -
+```python
+INSTALLED_APPS = [
+    ...,
+    'search_api'
+]
+```
+3. Also add the following line in the main project's `urls.py` file:
+```python
+urlpatterns = [
+    ...,
+    url(r'^logapi/', include('search_api.urls'))
+]
+```
+4. In the `search_api/essearch.py`, set the host and the port on which elasticsearch is running
+```python
+class SearchElasticSearch:
+    def __init__(self):
+        ...
+        self.es = Elasticsearch([{'host': '172.18.0.2', 'port': 9200}])
+        ...
+```
+6. Use the URLs to get the required data
