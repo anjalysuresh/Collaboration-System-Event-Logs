@@ -51,9 +51,9 @@ SERVER_CONF = {
 		...,
 
               "proxies": {
-                    "http": "http://proxy.cse.iitb.ac.in:80",
-                    "https": "https://proxy.cse.iitb.ac.in:80",
-                    "ftp": "ftp://proxy.cse.iitb.ac.in:80",
+                    "http": "http://address:port",
+                    "https": "https://address:port",
+                    "ftp": "ftp://address:port",
               }
 }
 ```
