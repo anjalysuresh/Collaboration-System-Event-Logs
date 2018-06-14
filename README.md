@@ -5,14 +5,6 @@ Event logging module is a part of the Collaboration system. This module deals wi
 This module works as a middleware in Django project and captures and filters the request based on the specification. The logs will be stored in elasticsearch using logstash.
 </p>
 
-## Setup
-
-<p>To setup this module with the Collaboration system, perform the following steps:</p>
-1. Copy the `eventlog` folder into the root of the main Django project.
-2. Go to project's `settings.py` file and in the set of the middlewares add following line:
-
-And, thats all, you are done!
-
 ## Setting up ELK Stack with docker
 
 1. Place elasticsearch, logstash, kibana folders of evelog-Docker in the Collaboration-System repository.
