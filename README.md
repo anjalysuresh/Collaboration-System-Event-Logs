@@ -33,11 +33,11 @@ $ git clone https://github.com/fresearchgroup/Collaboration-System.git
 
 	```
 
-5. In `.env` change the value of `LOG_TYPE` to ip address of `logstash`(see step  to know how to get the address of logstash).
+5. In `.env` change the value of `LOG_TYPE` to ip address of `logstash`(see step 11 to know how to get the address of logstash).
 
 6. In `.env` change the value of `LOG_PORT` to port on which `logstash` is running.
 
-7. In `.env` change the value of `ELASTICSEARCH_ADDRESS` to ip address of `elasticsearch`(see step  to know how to get the address of elasticsearch).
+7. In `.env` change the value of `ELASTICSEARCH_ADDRESS` to ip address of `elasticsearch`(see step 11 to know how to get the address of elasticsearch).
 
 8. Run the server using the following command
 	```bash
