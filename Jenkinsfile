@@ -5,7 +5,17 @@ node {
 
   // Checkout code from repository and update any submodules
   checkout scm 
-  } 
+  }
+
+  stage('build') {
+            
+                echo 'Building..'
+                
+                sh "./eventlog.sh" 
+            
+        }  
+
+ 
  // sh 'git submodule update --init'  
 
   //stage 'Stage Build'
