@@ -1,5 +1,5 @@
 #!/bin/bash
-cd Collaboration-System-Event-Logs/evelog-Docker
+cd Eventlogs/evelog-Docker
 sudo docker-compose build        
-sudo docker-compose up
+sudo docker-compose up -d
 
